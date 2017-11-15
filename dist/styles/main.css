@@ -1681,9 +1681,14 @@ hr {
   border-bottom: 1px solid #d6d6d6;
   padding: 15px 0;
 }
+.videos .video .thumbnail {
+  overflow: hidden;
+}
 .videos .video .thumbnail img {
   width: 100%;
   height: auto;
+  -webkit-transform: scale(1.25) translateY(-25px);
+          transform: scale(1.25) translateY(-25px);
 }
 .videos .video .title {
   position: absolute;

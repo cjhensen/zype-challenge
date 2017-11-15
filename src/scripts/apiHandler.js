@@ -50,6 +50,7 @@ function processData(data) {
   $(VIDEOS_CONTAINER).html(videoElements);
 
   // activate the parallax effect (once items are rendered)
+  initializeParallax();
 }
 
 // renderThumbnailHtml:
@@ -81,7 +82,7 @@ function renderThumbnailHtml(item) {
       <div class="col-xs-12">
         <div class="video">
           <div class="thumbnail">
-            <img src="${thumbnailUrl}" alt="${title}" />
+            <img class="parallax" src="${thumbnailUrl}" alt="${title}" />
           </div>
           <div class="title">
             ${title}

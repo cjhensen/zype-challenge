@@ -6,9 +6,13 @@
     padding: @video-padding 0;
 
     .thumbnail {
+      overflow: hidden;
+      
       img {
         width: 100%;
         height: auto;
+        transform: scale(1.25) translateY(-25px);
+        // transform-origin: bottom;
       }
     }
 
