@@ -1,6 +1,6 @@
 Zype Mobile Parallax Challenge
 ------------------------------
-
+Parallax Video Demo
 [![Parallax Demo](https://i.ytimg.com/vi/o35XMKNX3W0/hqdefault.jpg)](https://www.youtube.com/watch?v=o35XMKNX3W0&feature=youtu.be)
 
 
