@@ -25,10 +25,6 @@ function toggleLoader() {
   $(LOADER).toggleClass('show');
 }
 
-function togglePagination() {
-  $(PAGINATION_CONTAINER).toggleClass('show');
-}
-
 // handleNextBtnClicked:
 // get next page of data from api
 function handleNextBtnClicked() {

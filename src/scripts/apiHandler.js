@@ -53,14 +53,12 @@ function processData(data) {
   });
 
   toggleLoader();
-  // togglePagination();
   emptyVideoElements();
   // add video elements to the page
   $(VIDEOS_CONTAINER).html(videoElements);
 
   // activate the parallax effect (once items are rendered)
   initializeParallax();
-  console.log('pn', pagination);
 }
 
 function emptyVideoElements() {
@@ -78,7 +76,7 @@ function renderThumbnailHtml(item) {
   const title = item.title;
   let thumbnailUrl = "";
 
-  // using thumbnal sizes with height of either 360 or 480
+  // using thumbnail sizes with height of either 360 or 480
   // builds an array of thumbnails per item with those sizes
   const selectedThumbnailSizes = item.thumbnails.filter(function(thumbnail) {
     return thumbnail.height === 360 || thumbnail.height === 480;
