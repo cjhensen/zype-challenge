@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Barlow+Condensed:300,400');
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 /**
  * 1. Set default font family to sans-serif.
@@ -1695,6 +1696,11 @@ hr {
   left: 0;
   bottom: 0;
   margin: 0 15px 45px 15px;
+  padding-bottom: 4px;
   background: #000;
   color: #fff;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 300;
+  font-size: 22px;
+  line-height: 26px;
 }
