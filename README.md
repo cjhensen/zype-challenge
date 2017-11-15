@@ -20,11 +20,14 @@ Parallax Video Demo
    - styles
      - base
        - bootstrap-grid.less
+       - fonts.less
        - globals.less - global styles
        - normalize.less
        - variables.less - reusable variables
      - components
        - video.less - styles for video component
+       - loader.less
+       - pagination.less
      - main.less - imports all LESS
    - gulpfile.js 
      - commands available:
