@@ -1688,8 +1688,8 @@ hr {
 .videos .video .thumbnail img {
   width: 100%;
   height: auto;
-  -webkit-transform: scale(1.25) translateX(20px) translateY(-25px);
-          transform: scale(1.25) translateX(20px) translateY(-25px);
+  -webkit-transform: scale(1.25) translateY(-25px);
+          transform: scale(1.25) translateY(-25px);
 }
 .videos .video .title {
   position: absolute;
