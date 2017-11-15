@@ -93,7 +93,7 @@ function renderThumbnailHtml(item) {
 
   return `
     <div class="row">
-      <div class="col-xs-12">
+      <div class="col-xs-12 col-md-8 col-md-offset-2">
         <div class="video">
           <div class="thumbnail">
             <img class="parallax" src="${thumbnailUrl}" alt="${title}" />
