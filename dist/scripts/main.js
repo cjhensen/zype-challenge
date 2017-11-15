@@ -71,8 +71,6 @@ function renderThumbnailHtml(item) {
     thumbnailUrl = selectedThumbnailSizes[0].url;
   }
 
-  console.log('thumbnailUrl', thumbnailUrl);
-
   return `
     <div class="row">
       <div class="col-xs-12">
