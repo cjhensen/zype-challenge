@@ -184,6 +184,9 @@ function updateParallax() {
 // shift image up/down via transformAmount depending on direction of scroll
 function updateImages() {
   let scrollTop = $(window).scrollTop();
+
+  // can change this variable to make the image shift go quicker, 
+  // however it will reach its bounds quicker too
   const parallaxSpeed = 0.3;
 
   $.each(images, function (index, image) {
