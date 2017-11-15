@@ -1,3 +1,10 @@
+/* ************************************************************
+apiHandler.js
+getDataFromApi - get the data from Zype
+processData - process data and render to page
+renderThumbnailHtml - render markup for each thumbnail
+************************************************************ */
+
 // getDataFromApi:
 // pass in required parameters
 // optional 'active' param for the API call
