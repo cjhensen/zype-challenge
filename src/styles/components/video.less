@@ -1,0 +1,25 @@
+.videos {
+  .video {
+    @video-padding: 15px;
+    position: relative;
+    border-bottom: 1px solid @light-grey;
+    padding: @video-padding 0;
+
+    .thumbnail {
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .title {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      margin: 0 15px ((@video-padding*2) + 15) 15px; // account for space from container padding
+
+      background: #000;
+      color: #fff;
+    }
+  }
+}

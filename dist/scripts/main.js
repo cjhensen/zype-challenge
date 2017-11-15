@@ -68,9 +68,9 @@ function renderThumbnailHtml(item) {
   });
 
   // use the first item in the array for the size (will always be either 360 or 480)
-  // if the url contains default, use my placeholder
+  // if there aren't any thumbnails available use my placeholder
   // else use the url of the image supplied
-  if (selectedThumbnailSizes[0].url.includes('default')) {
+  if (selectedThumbnailSizes.length === 0) {
     thumbnailUrl = 'http://via.placeholder.com/640x480';
   } else {
     thumbnailUrl = selectedThumbnailSizes[0].url;

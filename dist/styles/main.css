@@ -1667,3 +1667,29 @@ hr {
     display: none !important;
   }
 }
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.app {
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+}
+.videos .video {
+  position: relative;
+  border-bottom: 1px solid #d6d6d6;
+  padding: 15px 0;
+}
+.videos .video .thumbnail img {
+  width: 100%;
+  height: auto;
+}
+.videos .video .title {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  margin: 0 15px 45px 15px;
+  background: #000;
+  color: #fff;
+}
