@@ -1,6 +1,5 @@
 const VIDEOS_CONTAINER = '.videos';
 
-
 // getDataFromApi:
 // pass in required parameters
 // optional 'active' param for the API call
@@ -33,12 +32,12 @@ function processData(data) {
 
   // array of response items
   const videoItems = data.response;
-  
+
   // array of elements to be rendered
   const videoElements = [];
 
   // build the html for each item and add to array to be rendered
-  videoItems.forEach(function(item) {
+  videoItems.forEach(function (item) {
     videoElements.push(renderThumbnailHtml(item));
   });
 
@@ -59,14 +58,14 @@ function renderThumbnailHtml(item) {
 
   // using thumbnal sizes with height of either 360 or 480
   // builds an array of thumbnails per item with those sizes
-  const selectedThumbnailSizes = item.thumbnails.filter(function(thumbnail) {
+  const selectedThumbnailSizes = item.thumbnails.filter(function (thumbnail) {
     return thumbnail.height === 360 || thumbnail.height === 480;
   });
 
   // use the first item in the array for the size (will always be either 360 or 480)
   // if the url contains default, use my placeholder
   // else use the url of the image supplied
-  if(selectedThumbnailSizes[0].url.includes('default')) {
+  if (selectedThumbnailSizes[0].url.includes('default')) {
     thumbnailUrl = 'http://via.placeholder.com/640x480';
   } else {
     thumbnailUrl = selectedThumbnailSizes[0].url;
@@ -89,7 +88,6 @@ function renderThumbnailHtml(item) {
     </div>
   `;
 }
-
 
 function runApp() {
   console.log('runApp');
