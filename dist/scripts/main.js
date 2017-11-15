@@ -204,7 +204,7 @@ function updateImages() {
         }
       }
 
-      image.element.css({ "transform": `scale(1.25) translateY(${image.transformAmount}px` });
+      image.element.css({ "transform": `scale(1.25) translateX(20px) translateY(${image.transformAmount}px` });
     }
   });
   lastScrollTop = scrollTop;
