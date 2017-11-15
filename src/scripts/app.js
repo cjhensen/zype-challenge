@@ -4,10 +4,46 @@ Author: Christian Hensen
 handleWindowScrolled
 assignEventHandlers
 runApp
+handlePreviousBtnClicked - navigate to previous page of videos
+handleNextBtnClicked - navigate to next page of videos
+toggleLoader
 ************************************************************ */
 
 // videos container selector
 const VIDEOS_CONTAINER = '.videos';
+// Previous and Next button selectors
+const BTN_PREVIOUS = '.btn-previous';
+const BTN_NEXT = '.btn-next';
+// loader selector
+const LOADER = '.loader-container';
+// pagination container selector
+const PAGINATION_CONTAINER = '.pagination';
+
+// toggleLoader:
+// toggle displaying the loader
+function toggleLoader() {
+  $(LOADER).toggleClass('show');
+}
+
+function togglePagination() {
+  $(PAGINATION_CONTAINER).toggleClass('show');
+}
+
+// handleNextBtnClicked:
+// get next page of data from api
+function handleNextBtnClicked() {
+  console.log('handleNextBtnClicked');
+  toggleLoader();
+  getDataFromApi(pagination.next, processData);
+}
+
+// handlePreviousBtnClicked:
+// get previous page of data from api
+function handlePreviousBtnClicked() {
+  console.log('handlePreviousBtnClicked');
+  toggleLoader();
+  getDataFromApi(pagination.previous, processData);
+}
 
 // handleWindowScrolled:
 // parallax entry point on window scroll
@@ -19,6 +55,8 @@ function handleWindowScrolled() {
 // assigns event handlers
 function assignEventHandlers() {
   $(window).on('scroll', handleWindowScrolled);
+  $(BTN_PREVIOUS).on('click', handlePreviousBtnClicked);
+  $(BTN_NEXT).on('click', handleNextBtnClicked);
 }
 
 // runApp:
@@ -26,7 +64,8 @@ function assignEventHandlers() {
 // then attaching event handlers
 function runApp() {
   console.log('runApp');
-  getDataFromApi(processData);
+  getDataFromApi(1, processData);
+  toggleLoader();
   assignEventHandlers();
 }
 

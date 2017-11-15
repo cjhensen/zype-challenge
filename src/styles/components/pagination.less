@@ -1,0 +1,20 @@
+.pagination {
+  margin: 30px auto;
+  padding-bottom: 30px;
+}
+
+.btn {
+  height: 40px;
+  background: @light-green;
+  border: none;
+  border-radius: 10px;
+  width: 100%;
+
+  .base-font(@size: 22px);
+  color: #fff;
+  transition: background-color 0.5s ease;
+
+  &:hover {
+    background: darken(@light-green, 15%)
+  }
+}

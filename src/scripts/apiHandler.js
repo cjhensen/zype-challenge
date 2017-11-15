@@ -5,12 +5,13 @@ getDataFromApi - get the data from Zype
 processData - process data and render to page
 renderThumbnailHtml - render markup for each thumbnail
 ************************************************************ */
+let pagination = {};
 
 // getDataFromApi:
 // pass in required parameters
 // optional 'active' param for the API call
 // callbackFn handles the data received
-function getDataFromApi(callbackFn) {
+function getDataFromApi(goToPage, callbackFn) {
   console.log('getDataFromApi');
 
   const API_URL = 'https://api.zype.com/videos';
@@ -19,7 +20,8 @@ function getDataFromApi(callbackFn) {
     url: API_URL,
     data: {
       api_key: API_KEY,
-      active: true
+      active: true,
+      page: goToPage
     },
     dataType: 'json',
     type: 'GET',
@@ -36,6 +38,9 @@ function processData(data) {
   console.log('processData');
   console.log('data', data);
 
+  // set local pagination variable
+  pagination = data.pagination;
+
   // array of response items
   const videoItems = data.response;
   
@@ -47,11 +52,21 @@ function processData(data) {
     videoElements.push(renderThumbnailHtml(item));
   });
 
+  toggleLoader();
+  // togglePagination();
+  emptyVideoElements();
   // add video elements to the page
   $(VIDEOS_CONTAINER).html(videoElements);
 
   // activate the parallax effect (once items are rendered)
   initializeParallax();
+  console.log('pn', pagination);
+}
+
+function emptyVideoElements() {
+  if($(VIDEOS_CONTAINER).children().length > 0) {
+    $(VIDEOS_CONTAINER).empty();
+  }
 }
 
 // renderThumbnailHtml:
