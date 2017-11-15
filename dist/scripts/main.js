@@ -1,5 +1,6 @@
 /* ************************************************************
 apiHandler.js
+Author: Christian Hensen
 getDataFromApi - get the data from Zype
 processData - process data and render to page
 renderThumbnailHtml - render markup for each thumbnail
@@ -94,6 +95,7 @@ function renderThumbnailHtml(item) {
 }
 /* ************************************************************
 app.js
+Author: Christian Hensen
 handleWindowScrolled
 assignEventHandlers
 runApp
@@ -126,6 +128,7 @@ function runApp() {
 $(runApp());
 /* ************************************************************
 parallax.js
+Author: Christian Hensen
 initializeParallax - setup the parallax items
 isElementVisible - check if item is in viewport
 updateParallax - trigger animation

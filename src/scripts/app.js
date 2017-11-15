@@ -1,5 +1,6 @@
 /* ************************************************************
 app.js
+Author: Christian Hensen
 handleWindowScrolled
 assignEventHandlers
 runApp

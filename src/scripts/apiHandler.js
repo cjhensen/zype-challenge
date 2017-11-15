@@ -1,5 +1,6 @@
 /* ************************************************************
 apiHandler.js
+Author: Christian Hensen
 getDataFromApi - get the data from Zype
 processData - process data and render to page
 renderThumbnailHtml - render markup for each thumbnail

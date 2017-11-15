@@ -1,5 +1,6 @@
 /* ************************************************************
 parallax.js
+Author: Christian Hensen
 initializeParallax - setup the parallax items
 isElementVisible - check if item is in viewport
 updateParallax - trigger animation
