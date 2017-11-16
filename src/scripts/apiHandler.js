@@ -4,8 +4,14 @@ Author: Christian Hensen
 getDataFromApi - get the data from Zype
 processData - process data and render to page
 renderThumbnailHtml - render markup for each thumbnail
+replaceImage - replaces broken image urls with my custom url
+handleImageErrors - event handler for broken image urls
+emptyVideoElements
 ************************************************************ */
 let pagination = {};
+
+// video element thumbnail image
+const VIDEO_ELEMENT_IMG = '.thumbnail img';
 
 // getDataFromApi:
 // pass in required parameters
@@ -25,7 +31,12 @@ function getDataFromApi(goToPage, callbackFn) {
     },
     dataType: 'json',
     type: 'GET',
-    success: callbackFn
+    success: callbackFn,
+    error: function (jqXHR, status, error) {
+            console.log('error', jqXHR);
+            console.log('error', status);
+            console.log('error', error);
+    }
   };
 
   $.ajax(settings);
@@ -56,15 +67,33 @@ function processData(data) {
   emptyVideoElements();
   // add video elements to the page
   $(VIDEOS_CONTAINER).html(videoElements);
-
+  // handle image errors (broken links) once contents rendered to page
+  handleImageErrors();
   // activate the parallax effect (once items are rendered)
   initializeParallax();
 }
 
+// emptyVideoElements:
+// clear video elements container before rendering new list from pagination
 function emptyVideoElements() {
   if($(VIDEOS_CONTAINER).children().length > 0) {
     $(VIDEOS_CONTAINER).empty();
   }
+}
+
+// handleImageErrors:
+// if image has error (broken url) after they are rendered to the page, replace the url
+// need to have this event handler here because it needs to be triggered once image elements are
+// loaded since there aren't any on page load.
+function handleImageErrors() {
+  $(VIDEO_ELEMENT_IMG).on('error', replaceImage);
+}
+
+// replaceImage:
+// replace the image url with my custom placeholder
+function replaceImage() {
+  let customThumbnail = 'http://via.placeholder.com/640x480';
+  $(this).attr('src', customThumbnail);
 }
 
 // renderThumbnailHtml:
@@ -75,6 +104,7 @@ function renderThumbnailHtml(item) {
   // variables for title and thumbnailUrl
   const title = item.title;
   let thumbnailUrl = "";
+  let customThumbnail = 'http://via.placeholder.com/640x480';
 
   // using thumbnail sizes with height of either 360 or 480
   // builds an array of thumbnails per item with those sizes
