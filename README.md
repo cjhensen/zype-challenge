@@ -8,6 +8,8 @@ Parallax Video Demo
 [Live Demo](https://cjhensen.github.io/zype-challenge/dist/index.html)
 
 
+**Click next button through to the 4th page to see my image replacement working**
+
 **Files**
 
  - dist
