@@ -25,12 +25,20 @@ function toggleLoader() {
   $(LOADER).toggleClass('show');
 }
 
+// scrollToTop:
+// scroll to top of window
+// used after pagination button click
+function scrollToTop() {
+  window.scrollTo(0,0);
+}
+
 // handleNextBtnClicked:
 // get next page of data from api
 function handleNextBtnClicked() {
   console.log('handleNextBtnClicked');
   toggleLoader();
   getDataFromApi(pagination.next, processData);
+  scrollToTop();
 }
 
 // handlePreviousBtnClicked:
@@ -39,6 +47,7 @@ function handlePreviousBtnClicked() {
   console.log('handlePreviousBtnClicked');
   toggleLoader();
   getDataFromApi(pagination.previous, processData);
+  scrollToTop();
 }
 
 // handleWindowScrolled:
