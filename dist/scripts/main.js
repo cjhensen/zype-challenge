@@ -145,6 +145,7 @@ runApp
 handlePreviousBtnClicked - navigate to previous page of videos
 handleNextBtnClicked - navigate to next page of videos
 toggleLoader
+scrollToTop
 ************************************************************ */
 
 // videos container selector
